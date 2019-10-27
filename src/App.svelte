@@ -29,12 +29,22 @@
 	.wrapper {
 		 display:grid; /* use firefox dev to see grid  */
 		 grid-template-columns: 1fr;
+		 grid-template-areas: 
+		 "hero"
+		 "footer"
+		 "main";
 	}
 	.hero {
+		grid-area:hero;
 		margin:2em;
 		padding:1.5em;
 	}
-	article {
+	main {
+		grid-area:main;
+	}
+	
+	footer {
+		grid-area:footer;
 	}
 	section, footer, aside {
 		box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2);
@@ -118,7 +128,7 @@
 				<img src="https://via.placeholder.com/60" alt ="#" />
 			</aside>
 		</article>
-
+	</main>
 		<footer>
 			<nav class="socials">
 				<img src="https://via.placeholder.com/32" alt ="#" />
@@ -126,6 +136,4 @@
 				<img src="https://via.placeholder.com/32" alt ="#" />
 			</nav>
 		</footer>
-
-	</main>
 </div>
