@@ -9,19 +9,19 @@
 		font-family: 'Nunito Sans', sans-serif;
 	}
 	h1 {
-		font-size:3em;
+		font-size:2em;
 		font-weight:bold;
 		text-transform:uppercase;
 		letter-spacing: 0.1em;
 		
 	}
 	h2 {
-		font-size:2em;
+		font-size:1.6em;
 		font-weight:lighter;
 		letter-spacing: 0.1em;
 		}
 	h3 {
-		font-size:1.5em;
+		font-size:1.2em;
 		font-weight:normal;
 	}
 
