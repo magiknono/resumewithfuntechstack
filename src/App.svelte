@@ -1,3 +1,6 @@
+<script>
+</script>
+
 <div class="wrapper">
 	<header class="hero">
 		<img src="https://via.placeholder.com/200" alt ="#" />
