@@ -28,16 +28,24 @@
 	/* layout */
 	.wrapper {
 		 display:grid; /* use firefox dev to see grid  */
-		 grid-template-columns: 1fr;
+		 grid-template-columns: repeat(auto-fit,minmax(14em, 1fr));
+		 grid-row-gap:3em;
+		 grid-column-gap:1em;
 		 grid-template-areas: 
-		 "hero"
-		 "footer"
-		 "main";
+		 "hero-logo hero-title"
+		 "main main"
+		 "footer footer";
 	}
 	.hero {
-		grid-area:hero;
 		margin:2em;
-		padding:1.5em;
+		padding:1.5em; 	
+	}
+	.hero-logo {
+		grid-area:hero-logo;
+		
+	}
+	.hero-title {
+		grid-area:hero-title;
 	}
 	main {
 		grid-area:main;
@@ -58,11 +66,13 @@
 </style>
 
 <div class="wrapper">
-	<header class="hero">
+		<section class="hero-logo">
 		<img src="https://via.placeholder.com/200" alt ="#" />
-		<h1>magiknono - Freelance</h1>
+		</section>
+		<section class="hero-title">
+		<h1>Freelance</h1>
 		<h2>Full stack dev & linux sysadmin</h2>
-	</header>
+		</section>
 
 	<main>
 		<article class="jobs">
