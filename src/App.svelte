@@ -28,24 +28,32 @@
 	/* layout */
 	.wrapper {
 		 display:grid; /* use firefox dev to see grid  */
-		 grid-template-columns: repeat(auto-fit,minmax(14em, 1fr));
-		 grid-row-gap:3em;
-		 grid-column-gap:1em;
+		 grid-template-columns: repeat(auto-fill,minmax(461px,1px,1fr));
+		 grid-row-gap:1em;
+		 grid-column-gap:0em;
 		 grid-template-areas: 
-		 "hero-logo hero-title"
-		 "main main"
-		 "footer footer";
+		 "hero-logo hero-title hero-title"
+		 "main main main"
+		 "footer footer footer";
+		 padding-left:0.1em;
+		 padding-top:0.01em;
 	}
-	.hero {
-		margin:2em;
-		padding:1.5em; 	
+	.hero-logo , .hero-title{
+		margin-top:0.5em;
+		padding:0.5em; 	
 	}
 	.hero-logo {
 		grid-area:hero-logo;
+		width:10em;
+		height:10em;
 		
 	}
 	.hero-title {
 		grid-area:hero-title;
+		box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2);
+		border: 0.15em solid rgba(0,0,0,0.5);
+		margin-left:0.1em;
+		padding-right:0.1em;
 	}
 	main {
 		grid-area:main;
@@ -57,8 +65,8 @@
 	section, footer, aside {
 		box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2);
 		border: 0.15em solid rgba(0,0,0,0.5);
-		margin:2em;
-		padding:1.5em;
+		margin-bottom:1.5em;
+		padding:1em;
 	}
 	
 
@@ -66,13 +74,13 @@
 </style>
 
 <div class="wrapper">
-		<section class="hero-logo">
+		<article class="hero-logo">
 		<img src="https://via.placeholder.com/200" alt ="#" />
-		</section>
-		<section class="hero-title">
+		</article>
+		<article class="hero-title">
 		<h1>Freelance</h1>
 		<h2>Full stack dev & linux sysadmin</h2>
-		</section>
+		</article>
 
 	<main>
 		<article class="jobs">
