@@ -5,7 +5,7 @@
 	/* reset is in /public/global.css */
 
 	/* typo */
-	h1,h2,h3, p {
+	h1,h2,h3,p {
 		font-family: 'Nunito Sans', sans-serif;
 	}
 	h1 {
@@ -21,8 +21,18 @@
 		letter-spacing: 0.1em;
 		}
 	h3 {
+		font-size:1.4em;
+		text-transform:uppercase;
+		font-weight:bolder;
+		background-color:rgba(0,0,0,0.1);;
+		padding-left:1em;
+		margin-bottom:1em;
+	}
+	h4 {
 		font-size:1.2em;
 		font-weight:normal;
+		text-transform: capitalize;
+		
 	}
 
 	/* layout */
@@ -32,11 +42,14 @@
 		 grid-row-gap:2em;
 		 grid-column-gap:0em;
 		 grid-template-areas: 
-		 "hero-logo hero-title hero-title"
-		 "main main main"
-		 "footer footer footer";
+		 ". hero-logo hero-title hero-title ."
+		 ". main main main ."
+		 ". footer footer footer .";
 		 padding-left:0.1em;
 		 padding-top:0.01em;
+		 
+		  
+		
 	}
 	.hero-logo , .hero-title{
 		margin-top:0.5em;
@@ -47,6 +60,7 @@
 		width:10em;
 		height:10em;
 		padding:0.5em;
+		margin-left:1em;
 		
 	}
 	.hero-title {
@@ -58,6 +72,8 @@
 	}
 	main {
 		grid-area:main;
+		justify-self:auto;
+		
 	}
 	
 	footer {
@@ -72,35 +88,54 @@
 	article {
 		border: 0.15em solid rgba(0,0,0,0.2);
 		padding:1em;
+		margin-bottom:1em;
 	}
 	main {
-		display: grid;
-		grid-row-gap:1em;
-		grid-template-areas:
-		"jobs jobs jobs jobs jobs jobs jobs jobs jobs"
-		"skills skills skills skills skills skills skills aside aside";
-	}
-	.jobs {
-		grid-area:jobs;
-		display: grid;
-  		grid-column: 1 / 10;
-		grid-template-columns: subgrid;
 		
 	}
-	.skills {
-		grid-area:skills;
+	
+	article.skills {
+		display:grid;
+		grid-template-columns: 4;
+		grid-template-columns:subgrid;
+		
+		
+		
 	}
-	.aside {
-		grid-area:aside;
+	.skill {
+		grid-column:1/3;
+		margin-right:1em;
+		
+	}
+	aside {
+		grid-column:3/4;
+		grid-row: 2/8;
+		
+	}
+	.jobs {
+		
 	}
 	.job {
-		grid-column: 1/2;
+		
+		
+		
+		
 	}
 	.job-desc {
-		grid-column:2/9;
+		
+		
 	}
 	.job-time {
-		grid-columns:9/10;
+		
+	}
+	.job > img {
+		border-radius:50%;
+	}
+	.skill > img {
+		border-radius: 50%;
+	}
+	aside > img {
+		border-radius:5px;
 	}
 
 
@@ -120,81 +155,78 @@
 
 	<main>
 		<article class="jobs">
+			<h3>JOBS</h3>
 			<section class="job">
 				<img src="https://via.placeholder.com/96" alt ="#" />
-			</section>
-			<section class="job-desc">
-				<h3>job title</h3>
+			
+			<div class="job-desc">
+				<h4>job title</h4>
 				<p>description</p>
-			</section>
-			<section class="job-time">
+			</div>
+			<div class="job-time">
 				<p>2y</p>
-			</section>
-			<section class="job">
-				<img src="https://via.placeholder.com/96" alt ="#" />
-			</section>
-			<section class="job-desc">
-				<h3>job title</h3>
-				<p>description</p>
-			</section>
-			<section class="job-time">
-				<p>2y</p>
+			</div>
 			</section>
 			<section class="job">
 				<img src="https://via.placeholder.com/96" alt ="#" />
-			</section>
-			<section class="job-desc">
-				<h3>job title</h3>
+			
+			<div class="job-desc">
+				<h4>job title</h4>
 				<p>description</p>
-			</section>
-			<section class="job-time">
+			</div>
+			<div class="job-time">
 				<p>2y</p>
+			</div>
 			</section>
 		</article>
 
 		<article class="skills">
+			<h3>SKILLS</h3>
 			<section class="skill">
 				<img src="https://via.placeholder.com/96" alt ="#" />
-				<h3>skill title</h3>
+				<h4>skill title</h4>
 				<p>description</p>
 				<p>High</p>
 			</section>
 			<section class="skill">
 				<img src="https://via.placeholder.com/96" alt ="#" />
-				<h3>skill title</h3>
+				<h4>skill title</h4>
 				<p>description</p>
 				<p>High</p>
 			</section>
 			<section class="skill">
 				<img src="https://via.placeholder.com/96" alt ="#" />
-				<h3>skill title</h3>
+				<h4>skill title</h4>
 				<p>description</p>
 				<p>High</p>
 			</section>
 			<section class="skill">
 				<img src="https://via.placeholder.com/96" alt ="#" />
-				<h3>skill title</h3>
+				<h4>skill title</h4>
 				<p>description</p>
 				<p>High</p>
 			</section>
 			<section class="skill">
 				<img src="https://via.placeholder.com/96" alt ="#" />
-				<h3>skill title</h3>
+				<h4>skill title</h4>
 				<p>description</p>
 				<p>High</p>
 			</section>
 			<section class="skill">
 				<img src="https://via.placeholder.com/96" alt ="#" />
-				<h3>skill title</h3>
+				<h4>skill title</h4>
 				<p>description</p>
 				<p>High</p>
 			</section>
 			
-		</article>
-		<aside class="extra-skills">
+			<aside class="extra-skills">
+				<h3>extra</h3>
 				<img src="https://via.placeholder.com/60" alt ="#" />
 				<img src="https://via.placeholder.com/60" alt ="#" />
 			</aside>
+			
+		</article>
+		
 	</main>
 		<footer>
 			<nav class="socials">
