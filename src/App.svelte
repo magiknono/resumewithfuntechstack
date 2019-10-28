@@ -1,4 +1,10 @@
 <script>
+  import WrapperGrid from "../src/UI/WrapperGrid.svelte";
+
+	let layout = "\
+	'. hero-logo hero-title hero-title .' \
+	'. footer footer footer .' \
+	'. main main main .'";
 </script>
 
 <style>
@@ -43,19 +49,8 @@
 	}
 	}
 
-	/* layout */
-	.wrapper {
-		 display:grid; /* use firefox dev to see grid  */
-		 /* grid-template-columns: repeat(auto-fill,minmax(461px,1px,1fr)); */
-		 grid-row-gap:2em;
-		 grid-column-gap:0em;
-		 grid-template-areas: 
-		 ". hero-logo hero-title hero-title ."
-		 ". footer footer footer ."
-		 ". main main main .";
-		 padding-left:0.1em;
-		 padding-top:0.01em;
-	}
+	/* layout (wrapper is a svelte component) */
+	
 	.hero-logo , .hero-title{
 		margin-top:0.5em;
 		padding:0.5em; 	
@@ -136,13 +131,9 @@
 	aside > img {
 		border-radius:5px;
 	}
-
-
-
-
 </style>
 
-<div class="wrapper">
+<WrapperGrid customAreas={layout} >
 		<article class="hero-logo">
 		
 		<img src="https://via.placeholder.com/200" alt ="#" />
@@ -259,4 +250,4 @@
 				<img src="https://via.placeholder.com/32" alt ="#" />
 			</nav>
 		</footer>
-</div>
+</WrapperGrid>
