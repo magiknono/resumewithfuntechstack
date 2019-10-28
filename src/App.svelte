@@ -1,10 +1,62 @@
 <script>
+  import { fade } from 'svelte/transition';
+  
   import WrapperGrid from "../src/UI/WrapperGrid.svelte";
+  import LayoutMenu from "../src/UI/LayoutMenu.svelte";
 
-	let layout = "\
-	'. hero-logo hero-title hero-title .' \
-	'. footer footer footer .' \
-	'. main main main .'";
+	let layouts = ["\
+		'. hero-logo hero-title hero-title .' \
+		'. main main main .' \
+		'. footer footer footer .'",
+			 "\
+		'. hero-title hero-title hero-logo .' \
+		'. main main main .' \
+		'. footer footer footer .'",
+		 "\
+		'. hero-logo hero-title hero-title .' \
+		'. footer footer footer .' \
+		'. main main main .'",
+		 "\
+		'. hero-title hero-title hero-logo .' \
+		'. footer footer footer .' \
+		'. main main main .'",
+		"\
+		'. footer footer footer .' \
+		'. hero-logo hero-title hero-title .' \
+		'. main main main .'",
+		"\
+		'. footer footer footer .' \
+		'. hero-title hero-title hero-logo .' \
+		'. main main main .'",
+		"\
+		'. main main main .' \
+		'. hero-title hero-title hero-logo .' \
+		'. footer footer footer .'",
+		"\
+		'. main main main .' \
+		'. hero-logo hero-title hero-title .' \
+		'. footer footer footer .'",
+		"\
+		'. main main main .' \
+		'. footer footer footer .' \
+		'. hero-logo hero-title hero-title .'",
+		"\
+		'. main main main .' \
+		'. footer footer footer .' \
+		'. hero-title hero-title hero-logo .'"];
+
+		let selectedLayout = layouts[0];
+
+		let layoutMenuVisible = false;
+
+		function layoutMenuOpen() {
+			layoutMenuVisible = true;
+		};
+		function layoutMenuClose() {
+			layoutMenuVisible = false;
+		};
+		
+
 </script>
 
 <style>
@@ -30,7 +82,7 @@
 		font-size:1.4em;
 		text-transform:uppercase;
 		font-weight:bolder;
-		background-color:rgba(0,0,0,0.1);;
+		background-color:rgba(0,0,0,0.1);
 		padding-left:1em;
 		margin-bottom:1em;
 	}
@@ -102,9 +154,6 @@
 		grid-column:3/4;
 		grid-row: 2/8;
 	}
-	.jobs {
-		
-	}
 	.job {
 		display:flex;
 		align-items:center;
@@ -131,9 +180,40 @@
 	aside > img {
 		border-radius:5px;
 	}
+	.layout-menu-choices {
+		display:flex;
+		height:20vh;
+		width:100%;
+		align-items:center;
+		justify-content:space-between;
+	}
+	.layout-menu-choices > li {
+		 
+		 
+		
+	}
+
 </style>
 
-<WrapperGrid customAreas={layout} >
+{#if layoutMenuVisible}
+	<LayoutMenu on:close={(layoutMenuClose)}>
+		<ul class="layout-menu-choices">
+			<li><button on:click={() => selectedLayout = layouts[0]}>Default</button></li>
+			<li><button on:click={() => selectedLayout = layouts[1]}>1</button></li>
+			<li><button on:click={() => selectedLayout = layouts[2]}>2</button></li>
+			<li><button on:click={() => selectedLayout = layouts[3]}>3</button></li>
+			<li><button on:click={() => selectedLayout = layouts[4]}>4</button></li>
+			<li><button on:click={() => selectedLayout = layouts[5]}>5</button></li>
+			<li><button on:click={() => selectedLayout = layouts[6]}>6</button></li>
+			<li><button on:click={() => selectedLayout = layouts[7]}>7</button></li>
+			<li><button on:click={() => selectedLayout = layouts[8]}>8</button></li>
+			<li><button on:click={() => selectedLayout = layouts[9]}>9</button></li>
+			<li><button on:click={() => selectedLayout = layouts[10]}>10</button></li>
+			<li><button on:click={() => selectedLayout = layouts[11]}>11</button></li>
+		</ul>
+	</LayoutMenu>
+{/if}
+<WrapperGrid customAreas={selectedLayout} >
 		<article class="hero-logo">
 		
 		<img src="https://via.placeholder.com/200" alt ="#" />
@@ -141,6 +221,8 @@
 		<article class="hero-title">
 		<h1>Freelance</h1>
 		<h2>Full stack dev & linux sysadmin</h2>
+		<button on:click={layoutMenuOpen}>Choose Layout</button>
+		
 		</article>
 
 	<main>
@@ -243,7 +325,7 @@
 		</article>
 		
 	</main>
-		<footer>
+		<footer transition:fade>
 			<nav class="socials">
 				<img src="https://via.placeholder.com/32" alt ="#" />
 				<img src="https://via.placeholder.com/32" alt ="#" />
