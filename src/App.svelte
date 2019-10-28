@@ -33,8 +33,8 @@
 		 grid-column-gap:0em;
 		 grid-template-areas: 
 		 "hero-logo hero-title hero-title"
-		 "footer footer footer"
-		 "main main main"		 ;
+		 "main main main"
+		 "footer footer footer";
 		 padding-left:0.1em;
 		 padding-top:0.01em;
 	}
@@ -74,20 +74,20 @@
 		padding:1em;
 	}
 	main {
-  display: grid;
-  grid-column: 1 / 4;
-  grid-template-columns: subgrid;
-  
-  grid-row-gap:1em;
-
-}
-
-.jobs {
-  grid-column: 1/ 3;
-}
-.skills {
-  grid-column: 2/ 4;
-}
+		display: grid;
+		grid-column: 1 / 4;
+		grid-template-columns: subgrid;
+		grid-row-gap:1em;
+	}
+	.jobs {
+		grid-column: 1/ 4;
+	}
+	.skills {
+		grid-column: 1/ 3;
+	}
+	.aside {
+		grid-column:3/4;
+	}
 
 
 
@@ -162,11 +162,12 @@
 				<p>description</p>
 				<p>High</p>
 			</section>
-			<aside class="extra-skills">
+			
+		</article>
+		<aside class="extra-skills">
 				<img src="https://via.placeholder.com/60" alt ="#" />
 				<img src="https://via.placeholder.com/60" alt ="#" />
 			</aside>
-		</article>
 	</main>
 		<footer>
 			<nav class="socials">
