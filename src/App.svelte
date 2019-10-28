@@ -77,13 +77,13 @@
 		display: grid;
 		grid-row-gap:1em;
 		grid-template-areas:
-		"jobs jobs jobs"
-		"skills skills aside";
+		"jobs jobs jobs jobs jobs jobs jobs jobs jobs"
+		"skills skills skills skills skills skills skills aside aside";
 	}
 	.jobs {
 		grid-area:jobs;
 		display: grid;
-  		grid-column: 1 / 4;
+  		grid-column: 1 / 10;
 		grid-template-columns: subgrid;
 		
 	}
@@ -97,7 +97,10 @@
 		grid-column: 1/2;
 	}
 	.job-desc {
-		grid-column:2/4;
+		grid-column:2/9;
+	}
+	.job-time {
+		grid-columns:9/10;
 	}
 
 
@@ -123,6 +126,8 @@
 			<section class="job-desc">
 				<h3>job title</h3>
 				<p>description</p>
+			</section>
+			<section class="job-time">
 				<p>2y</p>
 			</section>
 			<section class="job">
@@ -131,6 +136,8 @@
 			<section class="job-desc">
 				<h3>job title</h3>
 				<p>description</p>
+			</section>
+			<section class="job-time">
 				<p>2y</p>
 			</section>
 			<section class="job">
@@ -139,6 +146,8 @@
 			<section class="job-desc">
 				<h3>job title</h3>
 				<p>description</p>
+			</section>
+			<section class="job-time">
 				<p>2y</p>
 			</section>
 		</article>
