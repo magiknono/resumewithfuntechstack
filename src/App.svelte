@@ -28,7 +28,7 @@
 	/* layout */
 	.wrapper {
 		 display:grid; /* use firefox dev to see grid  */
-		 grid-template-columns: repeat(auto-fill,minmax(461px,1px,1fr));
+		 /* grid-template-columns: repeat(auto-fill,minmax(461px,1px,1fr)); */
 		 grid-row-gap:2em;
 		 grid-column-gap:0em;
 		 grid-template-areas: 
@@ -75,18 +75,19 @@
 	}
 	main {
 		display: grid;
-		grid-column: 1 / 4;
-		grid-template-columns: subgrid;
 		grid-row-gap:1em;
+		grid-template-areas:
+		"jobs jobs jobs"
+		"skills skills aside"
 	}
 	.jobs {
-		grid-column: 1/ 4;
+		grid-area:jobs;
 	}
 	.skills {
-		grid-column: 1/ 3;
+		grid-area:skills;
 	}
 	.aside {
-		grid-column:3/4;
+		grid-area:aside;
 	}
 
 
