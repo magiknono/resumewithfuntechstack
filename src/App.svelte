@@ -32,7 +32,12 @@
 		font-size:1.2em;
 		font-weight:normal;
 		text-transform: capitalize;
-		
+	}
+	/* exception for mobile */
+	@media only screen and (max-width:800px) {
+	aside {
+		display:none;	
+		}
 	}
 
 	/* layout */
@@ -43,13 +48,10 @@
 		 grid-column-gap:0em;
 		 grid-template-areas: 
 		 ". hero-logo hero-title hero-title ."
-		 ". main main main ."
-		 ". footer footer footer .";
+		 ". footer footer footer ."
+		 ". main main main .";
 		 padding-left:0.1em;
 		 padding-top:0.01em;
-		 
-		  
-		
 	}
 	.hero-logo , .hero-title{
 		margin-top:0.5em;
@@ -69,11 +71,11 @@
 		border: 0.15em solid rgba(0,0,0,0.5);
 		margin-left:0.1em;
 		padding-right:0.1em;
+		margin-right:1em;
 	}
 	main {
 		grid-area:main;
 		justify-self:auto;
-		
 	}
 	
 	footer {
@@ -90,17 +92,9 @@
 		padding:1em;
 		margin-bottom:1em;
 	}
-	main {
-		
-	}
-	
 	article.skills {
 		display:grid;
 		grid-template-columns: 4;
-		grid-template-columns:subgrid;
-		
-		
-		
 	}
 	.skill {
 		grid-column:1/3;
@@ -109,14 +103,13 @@
 	aside {
 		grid-column:3/4;
 		grid-row: 2/8;
-		
 	}
 	.jobs {
 		
 	}
 	.job {
 		display:flex;
-		align-items:flex-start;
+		align-items:center;
 	}
 	.job-desc {
 		flex:1;
