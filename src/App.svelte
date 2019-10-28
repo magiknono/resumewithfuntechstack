@@ -29,12 +29,12 @@
 	.wrapper {
 		 display:grid; /* use firefox dev to see grid  */
 		 grid-template-columns: repeat(auto-fill,minmax(461px,1px,1fr));
-		 grid-row-gap:1em;
+		 grid-row-gap:2em;
 		 grid-column-gap:0em;
 		 grid-template-areas: 
 		 "hero-logo hero-title hero-title"
-		 "main main main"
-		 "footer footer footer";
+		 "footer footer footer"
+		 "main main main"		 ;
 		 padding-left:0.1em;
 		 padding-top:0.01em;
 	}
@@ -46,6 +46,7 @@
 		grid-area:hero-logo;
 		width:10em;
 		height:10em;
+		padding:0.5em;
 		
 	}
 	.hero-title {
@@ -68,13 +69,33 @@
 		margin-bottom:1.5em;
 		padding:1em;
 	}
-	
+	article {
+		border: 0.15em solid rgba(0,0,0,0.2);
+		padding:1em;
+	}
+	main {
+  display: grid;
+  grid-column: 1 / 4;
+  grid-template-columns: subgrid;
+  
+  grid-row-gap:1em;
+
+}
+
+.jobs {
+  grid-column: 1/ 3;
+}
+.skills {
+  grid-column: 2/ 4;
+}
+
 
 
 </style>
 
 <div class="wrapper">
 		<article class="hero-logo">
+		
 		<img src="https://via.placeholder.com/200" alt ="#" />
 		</article>
 		<article class="hero-title">
