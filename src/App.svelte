@@ -105,7 +105,6 @@
 	.skill {
 		grid-column:1/3;
 		margin-right:1em;
-		
 	}
 	aside {
 		grid-column:3/4;
@@ -116,20 +115,24 @@
 		
 	}
 	.job {
-		
-		
-		
-		
+		display:flex;
+		align-items:flex-start;
 	}
 	.job-desc {
-		
-		
-	}
-	.job-time {
-		
+		flex:1;
+		padding:2em;
 	}
 	.job > img {
 		border-radius:50%;
+	}
+
+	.skill {
+		display:flex;
+		align-items:flex-start;
+	}
+	.skill-desc {
+		flex:1;
+		padding:2em;
 	}
 	.skill > img {
 		border-radius: 50%;
@@ -184,40 +187,65 @@
 			<h3>SKILLS</h3>
 			<section class="skill">
 				<img src="https://via.placeholder.com/96" alt ="#" />
+				<div class="skill-desc">
 				<h4>skill title</h4>
 				<p>description</p>
+				</div>
+				<div class="skill-level">
 				<p>High</p>
+				</div>
 			</section>
 			<section class="skill">
 				<img src="https://via.placeholder.com/96" alt ="#" />
+				<div class="skill-desc">
 				<h4>skill title</h4>
 				<p>description</p>
+				</div>
+				<div class="skill-level">
 				<p>High</p>
+				</div>
 			</section>
 			<section class="skill">
 				<img src="https://via.placeholder.com/96" alt ="#" />
+				<div class="skill-desc">
 				<h4>skill title</h4>
 				<p>description</p>
+				</div>
+				<div class="skill-level">
 				<p>High</p>
+				</div>
 			</section>
 			<section class="skill">
 				<img src="https://via.placeholder.com/96" alt ="#" />
+				<div class="skill-desc">
 				<h4>skill title</h4>
 				<p>description</p>
+				</div>
+				<div class="skill-level">
 				<p>High</p>
+				</div>
 			</section>
 			<section class="skill">
 				<img src="https://via.placeholder.com/96" alt ="#" />
+				<div class="skill-desc">
 				<h4>skill title</h4>
 				<p>description</p>
+				</div>
+				<div class="skill-level">
 				<p>High</p>
+				</div>
 			</section>
 			<section class="skill">
 				<img src="https://via.placeholder.com/96" alt ="#" />
+				<div class="skill-desc">
 				<h4>skill title</h4>
 				<p>description</p>
+				</div>
+				<div class="skill-level">
 				<p>High</p>
+				</div>
 			</section>
+			
 			
 			<aside class="extra-skills">
 				<h3>extra</h3>
