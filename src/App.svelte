@@ -38,6 +38,9 @@
 	aside {
 		display:none;	
 		}
+	section.skill {
+		margin-right:0em;
+	}
 	}
 
 	/* layout */
