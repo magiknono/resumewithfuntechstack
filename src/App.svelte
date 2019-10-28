@@ -78,10 +78,14 @@
 		grid-row-gap:1em;
 		grid-template-areas:
 		"jobs jobs jobs"
-		"skills skills aside"
+		"skills skills aside";
 	}
 	.jobs {
 		grid-area:jobs;
+		display: grid;
+  		grid-column: 1 / 4;
+		grid-template-columns: subgrid;
+		
 	}
 	.skills {
 		grid-area:skills;
@@ -89,6 +93,13 @@
 	.aside {
 		grid-area:aside;
 	}
+	.job {
+		grid-column: 1/2;
+	}
+	.job-desc {
+		grid-column:2/4;
+	}
+
 
 
 
@@ -108,18 +119,24 @@
 		<article class="jobs">
 			<section class="job">
 				<img src="https://via.placeholder.com/96" alt ="#" />
+			</section>
+			<section class="job-desc">
 				<h3>job title</h3>
 				<p>description</p>
 				<p>2y</p>
 			</section>
 			<section class="job">
 				<img src="https://via.placeholder.com/96" alt ="#" />
+			</section>
+			<section class="job-desc">
 				<h3>job title</h3>
 				<p>description</p>
 				<p>2y</p>
 			</section>
 			<section class="job">
 				<img src="https://via.placeholder.com/96" alt ="#" />
+			</section>
+			<section class="job-desc">
 				<h3>job title</h3>
 				<p>description</p>
 				<p>2y</p>
