@@ -1,47 +1,48 @@
 <script>
+
   import WrapperGrid from "../src/UI/WrapperGrid.svelte";
   import LayoutMenu from "../src/UI/LayoutMenu.svelte";
 
 	let layouts = ["\
-		'. hero-logo hero-title hero-title .' \
-		'. main main main .' \
-		'. footer footer footer .'",
+		'. . hero-logo hero-title hero-title . .' \
+		'. . main main main . .' \
+		'. . footer footer footer . .'",
 			 "\
-		'. hero-title hero-title hero-logo .' \
-		'. main main main .' \
-		'. footer footer footer .'",
+		'. . hero-title hero-title hero-logo . .' \
+		'. . main main main . .' \
+		'. . footer footer footer . .'",
 		 "\
-		'. hero-logo hero-title hero-title .' \
-		'. footer footer footer .' \
-		'. main main main .'",
+		'. . hero-logo hero-title hero-title . .' \
+		'. . footer footer footer . .' \
+		'. . main main main . .'",
 		 "\
-		'. hero-title hero-title hero-logo .' \
-		'. footer footer footer .' \
-		'. main main main .'",
+		'. . hero-title hero-title hero-logo . .' \
+		'. . footer footer footer . .' \
+		'. . main main main . .'",
 		"\
-		'. footer footer footer .' \
-		'. hero-logo hero-title hero-title .' \
-		'. main main main .'",
+		'. . footer footer footer . .' \
+		'. . hero-logo hero-title hero-title . .' \
+		'. . main main main . .'",
 		"\
-		'. footer footer footer .' \
-		'. hero-title hero-title hero-logo .' \
-		'. main main main .'",
+		'. . footer footer footer . .' \
+		'. . hero-title hero-title hero-logo . .' \
+		'. . main main main . .'",
 		"\
-		'. main main main .' \
-		'. hero-title hero-title hero-logo .' \
-		'. footer footer footer .'",
+		'. . main main main . .' \
+		'. . hero-title hero-title hero-logo . .' \
+		'. . ooter footer footer . .'",
 		"\
-		'. main main main .' \
-		'. hero-logo hero-title hero-title .' \
-		'. footer footer footer .'",
+		'. . main main main . .' \
+		'. . hero-logo hero-title hero-title . .' \
+		'. . footer footer footer . .'",
 		"\
-		'. main main main .' \
-		'. footer footer footer .' \
-		'. hero-logo hero-title hero-title .'",
+		'. . main main main . .' \
+		'. . footer footer footer . .' \
+		'. . hero-logo hero-title hero-title . .'",
 		"\
-		'. main main main .' \
-		'. footer footer footer .' \
-		'. hero-title hero-title hero-logo .'"];
+		'. . main main main . .' \
+		'. . footer footer footer . .' \
+		'. . hero-title hero-title hero-logo . .'"];
 
 		let selectedLayout = layouts[0];
 
@@ -236,7 +237,7 @@
 		<img src="https://via.placeholder.com/200" alt ="#" />
 		</article>
 		<article class="hero-title">
-		<h1>Freelance</h1>
+		<h1>First Name Last Name</h1>
 		<h2>Full stack dev & linux sysadmin</h2>
 		<button on:click={layoutMenuOpen}>Choose Layout</button>
 		
