@@ -1,6 +1,4 @@
 <script>
-  import { fade } from 'svelte/transition';
-  
   import WrapperGrid from "../src/UI/WrapperGrid.svelte";
   import LayoutMenu from "../src/UI/LayoutMenu.svelte";
 
@@ -188,9 +186,6 @@
 		justify-content:space-between;
 	}
 	.layout-menu-choices > li {
-		 
-		 
-		
 	}
 
 </style>
@@ -198,18 +193,10 @@
 {#if layoutMenuVisible}
 	<LayoutMenu on:close={(layoutMenuClose)}>
 		<ul class="layout-menu-choices">
-			<li><button on:click={() => selectedLayout = layouts[0]}>Default</button></li>
-			<li><button on:click={() => selectedLayout = layouts[1]}>1</button></li>
-			<li><button on:click={() => selectedLayout = layouts[2]}>2</button></li>
-			<li><button on:click={() => selectedLayout = layouts[3]}>3</button></li>
-			<li><button on:click={() => selectedLayout = layouts[4]}>4</button></li>
-			<li><button on:click={() => selectedLayout = layouts[5]}>5</button></li>
-			<li><button on:click={() => selectedLayout = layouts[6]}>6</button></li>
-			<li><button on:click={() => selectedLayout = layouts[7]}>7</button></li>
-			<li><button on:click={() => selectedLayout = layouts[8]}>8</button></li>
-			<li><button on:click={() => selectedLayout = layouts[9]}>9</button></li>
-			<li><button on:click={() => selectedLayout = layouts[10]}>10</button></li>
-			<li><button on:click={() => selectedLayout = layouts[11]}>11</button></li>
+			{#each layouts as l, i}
+				<li><button on:click={() => selectedLayout = l}>{i}</button></li>
+			{/each}
+			
 		</ul>
 	</LayoutMenu>
 {/if}
@@ -325,7 +312,7 @@
 		</article>
 		
 	</main>
-		<footer transition:fade>
+		<footer>
 			<nav class="socials">
 				<img src="https://via.placeholder.com/32" alt ="#" />
 				<img src="https://via.placeholder.com/32" alt ="#" />
