@@ -7,8 +7,8 @@
   import WireframeTheme from "../src/THEMES/WireframeTheme.svelte";
 
   const themes = [
-		{ name: 'nes',   component: NesTheme   },
-		{ name: 'wireframe', component: WireframeTheme },
+		{ name: 'nes', hero1: "nes-container is-rounded is-centered hero-logo", hero2: "nes-container is-rounded hero-title", button: 'nes-btn', section1: "nes-container is-rounded", section2: "nes-container is-rounded", component: NesTheme   },
+		{ name: 'wireframe', hero1:"hero-logo", hero2: "hero-title", button: 'wireframe-btn', section1: "jobs", section2: "skills", component: WireframeTheme },
 	];
 
 let selected = themes[1];
@@ -216,24 +216,24 @@ let selected = themes[1];
 	</LayoutMenu>
 {/if}
 <WrapperGrid customAreas={selectedLayout} >
-		<article class="hero-logo">
+		<article class="{selected.hero1}">
 		
 		<img src="https://via.placeholder.com/200" alt ="#" />
 		</article>
-		<article class="hero-title">
+		<article class="{selected.hero2}">
 		<h1>First Name Last Name</h1>
 		<h2>Full stack dev & linux sysadmin</h2>
-		<button on:click={layoutMenuOpen}>Choose Layout</button> |
+		<button class="{selected.button}" on:click={layoutMenuOpen}>Choose Layout</button>
 		<select bind:value={selected}>
 			{#each themes as theme}
-				<option value={theme}>Choose Theme {theme.name}</option>
+				<option value={theme}> {theme.name}</option>
 			{/each}
 		</select>
 		<svelte:component this={selected.component}/>
 		</article>
 
 	<main>
-		<article class="jobs">
+		<article class="{selected.section1}">
 			<h3>JOBS</h3>
 			<section class="job">
 				<img src="https://via.placeholder.com/96" alt ="#" />
@@ -259,7 +259,7 @@ let selected = themes[1];
 			</section>
 		</article>
 
-		<article class="skills">
+		<article class="{selected.section2}">
 			<h3>SKILLS</h3>
 			<section class="skill">
 				<img src="https://via.placeholder.com/96" alt ="#" />
@@ -332,7 +332,7 @@ let selected = themes[1];
 		</article>
 		
 	</main>
-		<footer>
+		<footer class="nes-container is-rounded">
 			<nav class="socials">
 				<img src="https://via.placeholder.com/32" alt ="#" />
 				<img src="https://via.placeholder.com/32" alt ="#" />
