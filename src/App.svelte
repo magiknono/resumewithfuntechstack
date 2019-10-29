@@ -217,19 +217,14 @@
 		border-radius:25px;
 		opacity: 1;
 	}
-	.btn-bg--l0 {
-		background-image:url("../public/l0.png");
-	}
-	.btn-bg--l1 {
-		background-image:url("../public/l1.png");
-	}
+	
 </style>
 
 {#if layoutMenuVisible}
 	<LayoutMenu on:close={(layoutMenuClose)}>
 		<ul class="layout-menu-choices">
 			{#each layouts as l, i}
-				<li><button class="btn-l btn-bg--l{i}" on:click={() => selectedLayout = l}>{i}<img src="layouts/l{i}.png" alt="layout{i}" /></button></li>
+				<li><button class="btn-l" on:click={() => selectedLayout = l}><img src="layouts/l{i}.png" alt="layout"></button></li>
 			{/each}
 			
 		</ul>

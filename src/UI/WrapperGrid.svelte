@@ -12,6 +12,7 @@ export let customAreas;
 		 var(--areas); /* css var */
 		 padding-left:0.1em;
 		 padding-top:0.01em;
+		 background-color:white;
 	}
 </style>
 
