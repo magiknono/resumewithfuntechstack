@@ -1,7 +1,17 @@
 <script>
-
+  import { fade, fly } from 'svelte/transition';
   import WrapperGrid from "../src/UI/WrapperGrid.svelte";
   import LayoutMenu from "../src/UI/LayoutMenu.svelte";
+
+  import NesTheme from "../src/THEMES/NesTheme.svelte";
+  import WireframeTheme from "../src/THEMES/WireframeTheme.svelte";
+
+  const themes = [
+		{ name: 'nes',   component: NesTheme   },
+		{ name: 'wireframe', component: WireframeTheme },
+	];
+
+let selected = themes[1];
 
 	let layouts = ["\
 		'. . hero-logo hero-title hero-title . .' \
@@ -54,6 +64,8 @@
 		function layoutMenuClose() {
 			layoutMenuVisible = false;
 		};
+
+		let visible = true;
 		
 
 </script>
@@ -61,35 +73,7 @@
 <style>
 	/* reset is in /public/global.css */
 
-	/* typo */
-	h1,h2,h3,p {
-		font-family: 'Nunito Sans', sans-serif;
-	}
-	h1 {
-		font-size:2em;
-		font-weight:bold;
-		text-transform:uppercase;
-		letter-spacing: 0.1em;
-		
-	}
-	h2 {
-		font-size:1.6em;
-		font-weight:lighter;
-		letter-spacing: 0.1em;
-		}
-	h3 {
-		font-size:1.4em;
-		text-transform:uppercase;
-		font-weight:bolder;
-		background-color:rgba(0,0,0,0.1);
-		padding-left:1em;
-		margin-bottom:1em;
-	}
-	h4 {
-		font-size:1.2em;
-		font-weight:normal;
-		text-transform: capitalize;
-	}
+	
 	/* exception for mobile */
 	@media only screen and (max-width:800px) {
 	aside {
@@ -218,8 +202,8 @@
 		border-radius:25px;
 		opacity: 1;
 	}
-	
 </style>
+
 
 {#if layoutMenuVisible}
 	<LayoutMenu on:close={(layoutMenuClose)}>
@@ -239,8 +223,13 @@
 		<article class="hero-title">
 		<h1>First Name Last Name</h1>
 		<h2>Full stack dev & linux sysadmin</h2>
-		<button on:click={layoutMenuOpen}>Choose Layout</button>
-		
+		<button on:click={layoutMenuOpen}>Choose Layout</button> |
+		<select bind:value={selected}>
+			{#each themes as theme}
+				<option value={theme}>Choose Theme {theme.name}</option>
+			{/each}
+		</select>
+		<svelte:component this={selected.component}/>
 		</article>
 
 	<main>
