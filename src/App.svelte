@@ -186,15 +186,50 @@
 		justify-content:space-between;
 	}
 	.layout-menu-choices > li {
+		border-color:transparent;
 	}
-
+	.btn-l {
+		height:150px;
+		width:180px;
+		background-repeat:no-repeat;
+		background-color:transparent;
+		border-color:transparent;
+		opacity: 0.8;
+  		transition: 0.4s;
+	}
+	.btn-l:hover {
+		height:150px;
+		width:180px;
+		background-repeat:no-repeat;
+		background-color:rgba(255,255,255, .5);
+		border-style:solid;
+		border-color:transparent;
+		border-radius:25px;
+		opacity: 1;
+	}
+	.btn-l:focus {
+		height:150px;
+		width:180px;
+		background-repeat:no-repeat;
+		background-color:rgba(255,255,255, .5);
+		border-style:solid;
+		border-color:transparent;
+		border-radius:25px;
+		opacity: 1;
+	}
+	.btn-bg--l0 {
+		background-image:url("../public/l0.png");
+	}
+	.btn-bg--l1 {
+		background-image:url("../public/l1.png");
+	}
 </style>
 
 {#if layoutMenuVisible}
 	<LayoutMenu on:close={(layoutMenuClose)}>
 		<ul class="layout-menu-choices">
 			{#each layouts as l, i}
-				<li><button on:click={() => selectedLayout = l}>{i}</button></li>
+				<li><button class="btn-l btn-bg--l{i}" on:click={() => selectedLayout = l}>{i}<img src="layouts/l{i}.png" alt="layout{i}" /></button></li>
 			{/each}
 			
 		</ul>
