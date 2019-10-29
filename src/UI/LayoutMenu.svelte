@@ -13,15 +13,15 @@ function layoutMenuClose() {
 </script>
 <style>
 .layout-menu {
-  
+  position: -webkit-sticky;
+	position: sticky;
+	top:0px;
   display:flex;
- 
-  
- 
   background: #EEEE;
   background-image: linear-gradient(rgba(0, 0, 0, .1) .1em, transparent .1em), linear-gradient(90deg, rgba(0, 0, 0, .1) .1em, transparent .1em);
   background-size: 3em 3em;
   border : 1px solid rgba(0,0,0,.1);
+  
 }
 .layout-menu-close {
     
