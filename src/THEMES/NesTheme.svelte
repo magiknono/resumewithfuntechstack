@@ -1,5 +1,5 @@
 <svelte:head>
-	 <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+	 <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet" />
      <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
 </svelte:head>
  <style>

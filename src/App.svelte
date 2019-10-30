@@ -1,74 +1,93 @@
 <script>
   import WrapperGrid from "./UI/WrapperGrid.svelte";
   import LayoutMenu from "./UI/LayoutMenu.svelte";
+  import UserHero1 from "./USERS/UserHero1.svelte";
+  import UserHero2 from "./USERS/UserHero2.svelte";
 
   import WireframeTheme from "./THEMES/WireframeTheme.svelte";
   import NesTheme from "./THEMES/NesTheme.svelte";
-const themes = [
-		{ name: 'theme wireframe', hero1:"hero-logo", hero2: "hero-title", button: 'wireframe-btn', section1: "jobs", section2: "skills", footer: '', footerContent: "<img src='https://via.placeholder.com/32' alt ='#' /><img src='https://via.placeholder.com/32' alt ='#' /><img src='https://via.placeholder.com/32' alt ='#' />", component: WireframeTheme },
-		{ name: 'theme nes', hero1: "nes-container is-rounded is-centered hero-logo", hero2: "nes-container is-rounded hero-title", button: 'nes-btn', section1: "nes-container is-rounded", section2: "nes-container is-rounded", footer: 'nes-container is-rounded', footerContent: "<i class='nes-icon linkedin is-large'></i><i class='nes-icon gmail is-large'></i><i class='nes-icon github is-large'></i><i class='nes-icon twitter is-large'></i>", component: NesTheme   },
-		{ name: 'theme nes dark', hero1: "nes-container is-dark is-rounded is-centered hero-logo", hero2: "nes-container is-dark is-rounded hero-title", button: 'nes-btn is-primary', section1: "nes-container is-dark is-rounded", section2: "nes-container is-dark is-rounded", footer: 'nes-container is-dark is-rounded', footerContent: "<i class='nes-icon linkedin is-large'></i><i class='nes-icon gmail is-large'></i><i class='nes-icon github is-large'></i><i class='nes-icon twitter is-large'></i>", component: NesTheme   },
-    ];
-  let selected = themes[0];
 
-  const layouts = ["\
-		'. . hero-logo hero-title hero-title . .' \
-		'. . main main main . .' \
-		'. . footer footer footer . .'",
-			 "\
-		'. . hero-title hero-title hero-logo . .' \
-		'. . main main main . .' \
-		'. . footer footer footer . .'",
-		 "\
-		'. . hero-logo hero-title hero-title . .' \
-		'. . footer footer footer . .' \
-		'. . main main main . .'",
-		 "\
-		'. . hero-title hero-title hero-logo . .' \
-		'. . footer footer footer . .' \
-		'. . main main main . .'",
-		"\
-		'. . footer footer footer . .' \
-		'. . hero-logo hero-title hero-title . .' \
-		'. . main main main . .'",
-		"\
-		'. . footer footer footer . .' \
-		'. . hero-title hero-title hero-logo . .' \
-		'. . main main main . .'",
-		"\
-		'. . main main main . .' \
-		'. . hero-title hero-title hero-logo . .' \
-		'. . footer footer footer . .'",
-		"\
-		'. . main main main . .' \
-		'. . hero-logo hero-title hero-title . .' \
-		'. . footer footer footer . .'",
-		"\
-		'. . main main main . .' \
-		'. . footer footer footer . .' \
-		'. . hero-logo hero-title hero-title . .'",
-		"\
-		'. . main main main . .' \
-		'. . footer footer footer . .' \
-		'. . hero-title hero-title hero-logo . .'"];
+	const themes = [
+			{ name: 'theme wireframe', hero1:"hero-logo", hero2: "hero-title", button: 'wireframe-btn', section1: "jobs", section2: "skills", footer: '', footerContent: "<img src='https://via.placeholder.com/32' alt ='#' /><img src='https://via.placeholder.com/32' alt ='#' /><img src='https://via.placeholder.com/32' alt ='#' />", component: WireframeTheme },
+			{ name: 'theme nes', hero1: "nes-container is-rounded is-centered hero-logo", hero2: "nes-container is-rounded hero-title", button: 'nes-btn', section1: "nes-container is-rounded", section2: "nes-container is-rounded", footer: 'nes-container is-rounded', footerContent: "<i class='nes-icon linkedin is-large'></i><i class='nes-icon gmail is-large'></i><i class='nes-icon github is-large'></i><i class='nes-icon twitter is-large'></i>", component: NesTheme   },
+			{ name: 'theme nes dark', hero1: "nes-container is-dark is-rounded is-centered hero-logo", hero2: "nes-container is-dark is-rounded hero-title", button: 'nes-btn is-primary', section1: "nes-container is-dark is-rounded", section2: "nes-container is-dark is-rounded", footer: 'nes-container is-dark is-rounded', footerContent: "<i class='nes-icon linkedin is-large'></i><i class='nes-icon gmail is-large'></i><i class='nes-icon github is-large'></i><i class='nes-icon twitter is-large'></i>", component: NesTheme   },
+	];
+ 	let selectedTheme = themes[0];
 
-		let selectedLayout = layouts[0];
+	const layouts = ["\
+			'. . hero-logo hero-title hero-title . .' \
+			'. . main main main . .' \
+			'. . footer footer footer . .'",
+				"\
+			'. . hero-title hero-title hero-logo . .' \
+			'. . main main main . .' \
+			'. . footer footer footer . .'",
+			"\
+			'. . hero-logo hero-title hero-title . .' \
+			'. . footer footer footer . .' \
+			'. . main main main . .'",
+			"\
+			'. . hero-title hero-title hero-logo . .' \
+			'. . footer footer footer . .' \
+			'. . main main main . .'",
+			"\
+			'. . footer footer footer . .' \
+			'. . hero-logo hero-title hero-title . .' \
+			'. . main main main . .'",
+			"\
+			'. . footer footer footer . .' \
+			'. . hero-title hero-title hero-logo . .' \
+			'. . main main main . .'",
+			"\
+			'. . main main main . .' \
+			'. . hero-title hero-title hero-logo . .' \
+			'. . footer footer footer . .'",
+			"\
+			'. . main main main . .' \
+			'. . hero-logo hero-title hero-title . .' \
+			'. . footer footer footer . .'",
+			"\
+			'. . main main main . .' \
+			'. . footer footer footer . .' \
+			'. . hero-logo hero-title hero-title . .'",
+			"\
+			'. . main main main . .' \
+			'. . footer footer footer . .' \
+			'. . hero-title hero-title hero-logo . .'"];
 
-		
+	let selectedLayout = layouts[0];
 
-		let layoutMenuVisible = false;
+	
 
-		function layoutMenuOpen() {
-			layoutMenuVisible = true;
-		};
-		function layoutMenuClose() {
-			layoutMenuVisible = false;
-		};
+	let layoutMenuVisible = false;
 
-		let visible = true;
+	function layoutMenuOpen() {
+		layoutMenuVisible = true;
+	};
+	function layoutMenuClose() {
+		layoutMenuVisible = false;
+	};
 
-		
-		
+	let visible = true;
+
+	const users = [
+		{
+			id: 1,
+			firstName: 'first name',
+			lastName: 'last name',
+			headline: 'job headline',
+			avatarUrl: 'https://via.placeholder.com/200'
+		},
+		{
+			id: 2,
+			firstName: 'arnaud',
+			lastName: 'cormier',
+			headline: 'Freelance',
+			avatarUrl: ''
+
+		}
+	];
+	let selectedUser = users.filter(user => user.id == 2);
 
 </script>
 
@@ -214,24 +233,29 @@ const themes = [
 	</LayoutMenu>
 {/if}
 <WrapperGrid customAreas={selectedLayout} >
-		<article class="{selected.hero1}">
-		
-		<img src="https://via.placeholder.com/200" alt ="#" />
-		</article>
-		<article class="{selected.hero2}">
-		<h1>First Name Last Name</h1>
-		<h2>Full stack dev & linux sysadmin</h2>
-		<button class="{selected.button}" on:click={layoutMenuOpen}>Choose Layout</button>
-		<select bind:value={selected}>
-			{#each themes as theme}
-				<option value={theme}> {theme.name}</option>
-			{/each}
-		</select>
-		<svelte:component this={selected.component}/>
+
+	{#each selectedUser as user}
+		<article class="{selectedTheme.hero1}">
+			<UserHero1 avatarUrl={user.avatarUrl} />
 		</article>
 
+		<article class="{selectedTheme.hero2}">
+				<UserHero2 firstName={user.firstName}
+							lastName={user.lastName}
+							headline={user.headline} />
+		
+			<button class="{selectedTheme.button}" on:click={layoutMenuOpen}>Choose Layout</button>
+			<select bind:value={selectedTheme}>
+				{#each themes as theme}
+					<option value={theme}> {theme.name}</option>
+				{/each}
+			</select>
+			<svelte:component this={selectedTheme.component}/>
+		</article>
+	{/each}
+
 	<main>
-		<article class="{selected.section1}">
+		<article class="{selectedTheme.section1}">
 			<h3>JOBS</h3>
 			<section class="job">
 				<img src="https://via.placeholder.com/96" alt ="#" />
@@ -257,7 +281,7 @@ const themes = [
 			</section>
 		</article>
 
-		<article class="{selected.section2}">
+		<article class="{selectedTheme.section2}">
 			<h3>SKILLS</h3>
 			<section class="skill">
 				<img src="https://via.placeholder.com/96" alt ="#" />
@@ -329,9 +353,9 @@ const themes = [
 			
 		</article>
 
-		<footer class="{selected.footer}">
+		<footer class="{selectedTheme.footer}">
 			<nav class="socials">
-				{@html selected.footerContent}
+				{@html selectedTheme.footerContent}
 			</nav>
 		</footer>
 		
