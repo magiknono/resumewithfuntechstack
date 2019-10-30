@@ -176,8 +176,6 @@
 		border-color:transparent;
 	}
 	.btn-l {
-		height:150px;
-		width:180px;
 		background-repeat:no-repeat;
 		background-color:transparent;
 		border-color:transparent;
@@ -185,8 +183,7 @@
   		transition: 0.4s;
 	}
 	.btn-l:hover {
-		height:150px;
-		width:180px;
+		padding:1em;
 		background-repeat:no-repeat;
 		background-color:rgba(255,255,255, .5);
 		border-style:solid;
@@ -195,8 +192,7 @@
 		opacity: 1;
 	}
 	.btn-l:focus {
-		height:150px;
-		width:180px;
+		padding:1em;
 		background-repeat:no-repeat;
 		background-color:rgba(255,255,255, .5);
 		border-style:solid;
