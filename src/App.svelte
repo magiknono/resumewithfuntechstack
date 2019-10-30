@@ -1,5 +1,4 @@
 <script>
-  import { fade, fly } from 'svelte/transition';
   import WrapperGrid from "../src/UI/WrapperGrid.svelte";
   import LayoutMenu from "../src/UI/LayoutMenu.svelte";
 
@@ -8,9 +7,9 @@
   import NesTheme from "../src/THEMES/NesTheme.svelte";
 
   const themes = [
-		{ name: 'theme wireframe', hero1:"hero-logo", hero2: "hero-title", button: 'wireframe-btn', section1: "jobs", section2: "skills", footer: '', component: WireframeTheme },
-		{ name: 'theme nes', hero1: "nes-container is-rounded is-centered hero-logo", hero2: "nes-container is-rounded hero-title", button: 'nes-btn', section1: "nes-container is-rounded", section2: "nes-container is-rounded", footer: 'nes-container is-rounded', component: NesTheme   },
-		{ name: 'theme nes dark', hero1: "nes-container is-dark is-rounded is-centered hero-logo", hero2: "nes-container is-dark is-rounded hero-title", button: 'nes-btn is-primary', section1: "nes-container is-dark is-rounded", section2: "nes-container is-dark is-rounded", footer: 'nes-container is-dark is-rounded', component: NesTheme   },
+		{ name: 'theme wireframe', hero1:"hero-logo", hero2: "hero-title", button: 'wireframe-btn', section1: "jobs", section2: "skills", footer: '', footerContent: "<img src='https://via.placeholder.com/32' alt ='#' /><img src='https://via.placeholder.com/32' alt ='#' /><img src='https://via.placeholder.com/32' alt ='#' />", component: WireframeTheme },
+		{ name: 'theme nes', hero1: "nes-container is-rounded is-centered hero-logo", hero2: "nes-container is-rounded hero-title", button: 'nes-btn', section1: "nes-container is-rounded", section2: "nes-container is-rounded", footer: 'nes-container is-rounded', footerContent: "<i class='nes-icon linkedin is-large'></i><i class='nes-icon gmail is-large'></i><i class='nes-icon github is-large'></i><i class='nes-icon twitter is-large'></i>", component: NesTheme   },
+		{ name: 'theme nes dark', hero1: "nes-container is-dark is-rounded is-centered hero-logo", hero2: "nes-container is-dark is-rounded hero-title", button: 'nes-btn is-primary', section1: "nes-container is-dark is-rounded", section2: "nes-container is-dark is-rounded", footer: 'nes-container is-dark is-rounded', footerContent: "<i class='nes-icon linkedin is-large'></i><i class='nes-icon gmail is-large'></i><i class='nes-icon github is-large'></i><i class='nes-icon twitter is-large'></i>", component: NesTheme   },
 	];
 
   const layouts = ["\
@@ -68,6 +67,8 @@
 		};
 
 		let visible = true;
+
+		
 		
 
 </script>
@@ -332,9 +333,7 @@
 	</main>
 		<footer class="{selected.footer}">
 			<nav class="socials">
-				<img src="https://via.placeholder.com/32" alt ="#" />
-				<img src="https://via.placeholder.com/32" alt ="#" />
-				<img src="https://via.placeholder.com/32" alt ="#" />
+				{@html selected.footerContent}
 			</nav>
 		</footer>
 </WrapperGrid>

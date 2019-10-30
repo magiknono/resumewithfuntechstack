@@ -13,7 +13,7 @@ export let customAreas;
 		 padding-left:0.1em;
 		 padding-top:0.01em;
 		 background-color:white;
-		 animation: 7s wrapper cubic-bezier(.86,0,.07,1) 0.2s both;
+		 animation: 7s wrapper cubic-bezier(.86,0,.07,1) 0.3s both;
 		 
 		 
 	}
@@ -25,7 +25,6 @@ export let customAreas;
 		100% { transform: 0; }
 }
 </style>
-
 <div class="wrapper" style="--areas:{customAreas};">
     <slot></slot>
 </div>
