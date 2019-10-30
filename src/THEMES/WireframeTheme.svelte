@@ -1,34 +1,4 @@
-<style>
-/* typo */
-	h1,h2,h3,p {
-		font-family: 'Nunito Sans', sans-serif;
-	}
-	h1 {
-		font-size:2em;
-		font-weight:bold;
-		text-transform:uppercase;
-		letter-spacing: 0.1em;
-		
-	}
-	h2 {
-		font-size:1.6em;
-		font-weight:lighter;
-		letter-spacing: 0.1em;
-		}
-	h3 {
-		font-size:1.4em;
-		text-transform:uppercase;
-		font-weight:bolder;
-		background-color:rgba(0,0,0,0.1);
-		padding-left:1em;
-		margin-bottom:1em;
-	}
-	h4 {
-		font-size:1.2em;
-		font-weight:normal;
-		text-transform: capitalize;
-	}
-</style>
-<svelte:head>
+<svelte:head> 
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet"> 
+	<link rel='stylesheet' href='/wireframe.css'>
 </svelte:head>

@@ -14,21 +14,22 @@ function layoutMenuClose() {
 <style>
 .layout-menu {
   position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
 	position: sticky;
 	top:0px;
-  display:flex;
+  display:grid;
   background: #EEEE;
   background-image: linear-gradient(rgba(0, 0, 0, .1) .1em, transparent .1em), linear-gradient(90deg, rgba(0, 0, 0, .1) .1em, transparent .1em);
   background-size: 3em 3em;
   border : 1px solid rgba(0,0,0,.1);
   
 }
-.layout-menu-close {
-    
-}
+
 </style>
 
 <div class="layout-menu" transition:slide="{{delay: 100, duration: 1500, easing: quintOut }}">
     <slot></slot>
-    <button class="layout-menu-close" on:click={layoutMenuClose}>Close</button>
+    <button class="nes-btn" on:click={layoutMenuClose}>Close</button>
 </div>

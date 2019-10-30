@@ -3,17 +3,17 @@
   import WrapperGrid from "../src/UI/WrapperGrid.svelte";
   import LayoutMenu from "../src/UI/LayoutMenu.svelte";
 
-  import NesTheme from "../src/THEMES/NesTheme.svelte";
+
   import WireframeTheme from "../src/THEMES/WireframeTheme.svelte";
+  import NesTheme from "../src/THEMES/NesTheme.svelte";
 
   const themes = [
-		{ name: 'nes', hero1: "nes-container is-rounded is-centered hero-logo", hero2: "nes-container is-rounded hero-title", button: 'nes-btn', section1: "nes-container is-rounded", section2: "nes-container is-rounded", component: NesTheme   },
-		{ name: 'wireframe', hero1:"hero-logo", hero2: "hero-title", button: 'wireframe-btn', section1: "jobs", section2: "skills", component: WireframeTheme },
+		{ name: 'theme wireframe', hero1:"hero-logo", hero2: "hero-title", button: 'wireframe-btn', section1: "jobs", section2: "skills", footer: '', component: WireframeTheme },
+		{ name: 'theme nes', hero1: "nes-container is-rounded is-centered hero-logo", hero2: "nes-container is-rounded hero-title", button: 'nes-btn', section1: "nes-container is-rounded", section2: "nes-container is-rounded", footer: 'nes-container is-rounded', component: NesTheme   },
+		{ name: 'theme nes dark', hero1: "nes-container is-dark is-rounded is-centered hero-logo", hero2: "nes-container is-dark is-rounded hero-title", button: 'nes-btn is-primary', section1: "nes-container is-dark is-rounded", section2: "nes-container is-dark is-rounded", footer: 'nes-container is-dark is-rounded', component: NesTheme   },
 	];
 
-let selected = themes[1];
-
-	let layouts = ["\
+  const layouts = ["\
 		'. . hero-logo hero-title hero-title . .' \
 		'. . main main main . .' \
 		'. . footer footer footer . .'",
@@ -40,7 +40,7 @@ let selected = themes[1];
 		"\
 		'. . main main main . .' \
 		'. . hero-title hero-title hero-logo . .' \
-		'. . ooter footer footer . .'",
+		'. . footer footer footer . .'",
 		"\
 		'. . main main main . .' \
 		'. . hero-logo hero-title hero-title . .' \
@@ -55,6 +55,8 @@ let selected = themes[1];
 		'. . hero-title hero-title hero-logo . .'"];
 
 		let selectedLayout = layouts[0];
+
+		let selected = themes[0];
 
 		let layoutMenuVisible = false;
 
@@ -72,7 +74,7 @@ let selected = themes[1];
 
 <style>
 	/* reset is in /public/global.css */
-
+	
 	
 	/* exception for mobile */
 	@media only screen and (max-width:800px) {
@@ -332,7 +334,7 @@ let selected = themes[1];
 		</article>
 		
 	</main>
-		<footer class="nes-container is-rounded">
+		<footer class="{selected.footer}">
 			<nav class="socials">
 				<img src="https://via.placeholder.com/32" alt ="#" />
 				<img src="https://via.placeholder.com/32" alt ="#" />
