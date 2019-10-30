@@ -3,6 +3,7 @@
   import LayoutMenu from "./UI/LayoutMenu.svelte";
   import UserHero1 from "./USERS/UserHero1.svelte";
   import UserHero2 from "./USERS/UserHero2.svelte";
+  import UserJob from "./USERS/UserJob.svelte";
 
   import WireframeTheme from "./THEMES/WireframeTheme.svelte";
   import NesTheme from "./THEMES/NesTheme.svelte";
@@ -89,6 +90,24 @@
 	];
 	let selectedUser = users.filter(user => user.id == 2);
 
+	const jobs = [
+		{
+			id: 1,
+			jobTitle: 'job title',
+			jobDesc: 'job description',
+			jobTime: '2y',
+			jobImage: 'https://via.placeholder.com/96'
+		},
+		{
+			id: 2,
+			jobTitle: 'job title',
+			jobDesc: 'job description',
+			jobTime: '2y',
+			jobImage: 'https://via.placeholder.com/96'
+		},
+
+	];
+	
 </script>
 
 <style>
@@ -135,7 +154,7 @@
 	footer {
 		grid-area:footer;
 	}
-	section, footer, aside {
+	:global(section, footer, aside) {
 		box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2);
 		border: 0.15em solid rgba(0,0,0,0.5);
 		margin-bottom:1.5em;
@@ -158,17 +177,7 @@
 		grid-column:3/4;
 		grid-row: 2/8;
 	}
-	.job {
-		display:flex;
-		align-items:center;
-	}
-	.job-desc {
-		flex:1;
-		padding:2em;
-	}
-	.job > img {
-		border-radius:50%;
-	}
+	
 
 	.skill {
 		display:flex;
@@ -257,28 +266,14 @@
 	<main>
 		<article class="{selectedTheme.section1}">
 			<h3>JOBS</h3>
-			<section class="job">
-				<img src="https://via.placeholder.com/96" alt ="#" />
 			
-			<div class="job-desc">
-				<h4>job title</h4>
-				<p>description</p>
-			</div>
-			<div class="job-time">
-				<p>2y</p>
-			</div>
-			</section>
-			<section class="job">
-				<img src="https://via.placeholder.com/96" alt ="#" />
+			{#each jobs as job}
+				<UserJob jobTitle={job.jobTitle}
+						 jobImage={job.jobImage}
+						 jobDesc={job.jobDesc}
+						 jobTime={job.jobTime} />
+			{/each}
 			
-			<div class="job-desc">
-				<h4>job title</h4>
-				<p>description</p>
-			</div>
-			<div class="job-time">
-				<p>2y</p>
-			</div>
-			</section>
 		</article>
 
 		<article class="{selectedTheme.section2}">
