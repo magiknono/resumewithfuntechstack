@@ -88,26 +88,57 @@
 
 		}
 	];
-	let selectedUser = users.filter(user => user.id == 2);
+	let selectedUser = users.filter(user => user.id == 1);
 
 	const jobs = [
 		{
 			id: 1,
+			jobCompany: 'company',
 			jobTitle: 'job title',
 			jobDesc: 'job description',
 			jobTime: '2y',
-			jobImage: 'https://via.placeholder.com/96'
+			jobImage: 'https://via.placeholder.com/96',
+			userId: 1
 		},
 		{
 			id: 2,
+			jobCompany: 'company',
 			jobTitle: 'job title',
 			jobDesc: 'job description',
 			jobTime: '2y',
-			jobImage: 'https://via.placeholder.com/96'
+			jobImage: 'https://via.placeholder.com/96',
+			userId: 1
+		},
+		{
+			id: 3,
+			jobCompany: 'upyourbizz',
+			jobTitle: 'administrateur systèmes et réseaux',
+			jobDesc: 'sécurisation et mise en place infrastructure serveurs web linux',
+			jobTime: '2y',
+			jobImage: '/images/uyb.png',
+			userId: 2
+		},
+		{
+			id: 4,
+			jobCompany: 'geodis',
+			jobTitle: 'technicien informatique support et déploiement',
+			jobDesc: 'Support informatique région ouest',
+			jobTime: '2y',
+			jobImage: '/images/geodis.png',
+			userId: 2
+		},
+		{
+			id: 5,
+			jobCompany: 'mma',
+			jobTitle: 'technicien de supervision systèmes et réseaux',
+			jobDesc: 'Gestion des incidents, mise en prod et monitoring',
+			jobTime: '4y',
+			jobImage: '/images/mma.png',
+			userId: 2
 		},
 
 	];
-	
+	let selectedJobs = jobs.filter(jobs => jobs.userId == 1)
 </script>
 
 <style>
@@ -267,8 +298,9 @@
 		<article class="{selectedTheme.section1}">
 			<h3>JOBS</h3>
 			
-			{#each jobs as job}
-				<UserJob jobTitle={job.jobTitle}
+			{#each selectedJobs as job}
+				<UserJob jobCompany={job.jobCompany}
+						 jobTitle={job.jobTitle}
 						 jobImage={job.jobImage}
 						 jobDesc={job.jobDesc}
 						 jobTime={job.jobTime} />

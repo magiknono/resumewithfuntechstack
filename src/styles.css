@@ -1,7 +1,7 @@
 	/* reset is in /public/global.css */
 
 	/* typo */
-	h1,h2,h3,p {
+	h1,h2,h3,h4,h5,p {
 		font-family: 'Nunito Sans', sans-serif;
 	}
 	h1 {
@@ -28,6 +28,11 @@
 		font-size:1.2em;
 		font-weight:normal;
 		text-transform: capitalize;
+	}
+	h5 {
+		font-size:1em;
+		font-weight:normal;
+		text-transform: uppercase;
 	}
 	/* exception for mobile */
 	@media only screen and (max-width:800px) {
