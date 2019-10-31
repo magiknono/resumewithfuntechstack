@@ -4,6 +4,7 @@
   import UserHero1 from "./USERS/UserHero1.svelte";
   import UserHero2 from "./USERS/UserHero2.svelte";
   import UserJob from "./USERS/UserJob.svelte";
+  import BullshitGrid from "./UI/BullshitGrid.svelte";
 
   import WireframeTheme from "./THEMES/WireframeTheme.svelte";
   import NesTheme from "./THEMES/NesTheme.svelte";
@@ -88,7 +89,6 @@
 
 		}
 	];
-	let selectedUser = users.filter(user => user.id == 1);
 
 	const jobs = [
 		{
@@ -138,7 +138,17 @@
 		},
 
 	];
-	let selectedJobs = jobs.filter(jobs => jobs.userId == 1)
+	let seedId = 1;
+	function getRealDataWay1() {
+		seedId =2;
+		selectedUser = users.filter(user => user.id == seedId);
+		selectedJobs = jobs.filter(jobs => jobs.userId == seedId);
+	}
+	let selectedUser = users.filter(user => user.id == seedId);
+	let selectedJobs = jobs.filter(jobs => jobs.userId == seedId);
+
+	let getLucky = false;
+	$: console.log(getLucky);
 </script>
 
 <style>
@@ -272,6 +282,9 @@
 		</ul>
 	</LayoutMenu>
 {/if}
+{#if getLucky}
+<BullshitGrid />
+{:else}
 <WrapperGrid customAreas={selectedLayout} >
 
 	{#each selectedUser as user}
@@ -291,6 +304,10 @@
 				{/each}
 			</select>
 			<svelte:component this={selectedTheme.component}/>
+			<button on:click={getRealDataWay1}>getRealDataWay1</button>
+			<label>GetRealDataWay2
+				<input type="checkbox" bind:checked={getLucky}>
+			</label>
 		</article>
 	{/each}
 
@@ -389,3 +406,4 @@
 	</main>
 		
 </WrapperGrid>
+{/if}
