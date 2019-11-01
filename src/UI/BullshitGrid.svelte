@@ -10,7 +10,9 @@
         font-weight:bold;
         font-size:5em;
         justify-content:center;
+        overflow-y: hidden;
     }
+   
 	.wrapper {
 		 display:grid; /* use firefox dev to see grid  */
 		 /* grid-template-columns: repeat(auto-fill,minmax(461px,1px,1fr)); */
@@ -20,15 +22,12 @@
          grid-template-rows: 50px, 150px, 1fr, 150px;
 		 grid-column-gap:2em;
 		 padding-top:2em;
-		 
          justify-content:center;
-        
-         
+         background-image: url("images/poker-bg.jpg");
          background-color: #1b8442;
          height:100vh;
-         
-         
-	}
+         border: 15px solid #030;
+    }
     .tools {
         grid-column: 1 / 6;
         grid-row: 1 / 2;
@@ -37,14 +36,11 @@
     .tapis-title1 {
         grid-column: 1 / 6;
         grid-row: 2 / 3;
-        
-        
+        color:black;
     }
     .tapis-title2 {
         grid-column: 1 / 6;
-        grid-row: 4 / 5;
-        
-       
+        grid-row: 1fr;
     }
     .beer {
         background-color: #a03e39;
@@ -61,7 +57,6 @@
         height:240px;
         width: 189px;
     }
-
 </style>
 
 <script>
