@@ -88,10 +88,12 @@ let cards = [
 ];
 function mark(card, selected) {
     cards = [card, ...cards];
+    if (cards.length === 10) {
+        visible = true
+    } else {
     card.selected = true;
     cards = cards.filter(c => c !== selected)
-     
-     
+    }
 }
 function shuffle() {
     cards = cards.sort(() => Math.random() - 0.5);
