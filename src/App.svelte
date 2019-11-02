@@ -6,6 +6,8 @@
   import UserJob from "./USERS/UserJob.svelte";
   import BullshitGrid from "./UI/BullshitGrid.svelte";
 
+  import { onMount } from "svelte";
+
   import WireframeTheme from "./THEMES/WireframeTheme.svelte";
   import NesTheme from "./THEMES/NesTheme.svelte";
 
@@ -71,6 +73,26 @@
 	};
 
 	let visible = true;
+
+	// fetch fast_jsonapi
+	const endpoint = "http://localhost:3000/api/v1";
+	let uri = "/users/1";
+	 let headers = new Headers({
+    "Accept"       : "application/json",
+    "User-Agent"   : "OhOhOh"
+});
+
+	let datas;
+
+	 onMount(async () => {
+		const response = await fetch(endpoint + uri, {
+			method: 'GET',
+			headers: headers
+		});
+		const json = await response.json();
+		datas = console.log(json.data);
+	});
+
 
 	const users = [
 		{
@@ -284,7 +306,6 @@
 <BullshitGrid />
 {:else}
 <WrapperGrid customAreas={selectedLayout} >
-
 	{#each selectedUser as user}
 		<article class="{selectedTheme.hero1}">
 			<UserHero1 avatarUrl={user.avatarUrl} />
@@ -306,6 +327,8 @@
 			<label>GetRealDataWay2
 				<input type="checkbox" bind:checked={getLucky}>
 			</label>
+			
+
 		</article>
 	{/each}
 
