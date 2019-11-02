@@ -53,9 +53,9 @@
 	.active {
         background-color: white;
         border-radius:5px;
-        border:9px solid black;
-        height:240px;
-        width: 189px;
+        border:2px solid #a03e39;
+        height:223px;
+        width: 171px;
     }
 </style>
 
@@ -67,7 +67,8 @@ let time = new Date();
 
 	$: hours = time.getHours();
 	$: minutes = time.getMinutes();
-	$: seconds = time.getSeconds();
+    $: seconds = time.getSeconds();
+
 onMount(() => {
 		const interval = setInterval(() => {
 			time = new Date();
@@ -75,7 +76,7 @@ onMount(() => {
 
 		return () => {
 			clearInterval(interval);
-		};
+        };
 	});
 let cards = [
     { id: 1, imageUrl: 'images/1.jpeg', selected: false },
@@ -89,7 +90,7 @@ let cards = [
 function mark(card, selected) {
     cards = [card, ...cards];
     if (cards.length === 10) {
-        visible = true
+        visible = true;
     } else {
     card.selected = true;
     cards = cards.filter(c => c !== selected)
@@ -114,13 +115,13 @@ let status = 'pret à mélanger...';
     </div>
     <div class="tapis-title1"><h1>RANDOM POKER PAUSE</h1></div>
     {#each cards.filter(c=> !c.selected) as card (card.id)}
-        <div class="beer" id="{card.id}" transition:fly="{{ y: 400, duration: 2000 }}"
+        <div class="beer" id="{card.id}" transition:fly="{{ y: 200, duration: 1000 }}"
 		on:introstart="{() => status = 'prêt à mélanger'}"
 		on:outrostart="{() => status = 'ca mélange'}"
 		on:introend="{() => status = 'mélanger encore'}"
 		on:outroend="{() => status = 'c est melangé'}" on:click={() => mark(card, false)}>
             {#if visible}
-            <img src="{card.imageUrl}" alt="{console.log(card.id, card)}" />
+            <img class="active" src="{card.imageUrl}" alt="{console.log(card.id, card)}" />
             {/if}
         </div>
     {/each}
