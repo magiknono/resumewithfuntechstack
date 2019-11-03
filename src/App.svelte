@@ -78,11 +78,11 @@
 	const endpoint = "http://localhost:3000/api/v1";
 	let uri = "/users/1";
 	 let headers = new Headers({
-    "Accept"       : "application/json",
+    "Accept"       : "application/vnd.api+json",
     "User-Agent"   : "OhOhOh"
 });
 
-	let datas;
+	let datas = [];
 
 	 onMount(async () => {
 		const response = await fetch(endpoint + uri, {
@@ -90,7 +90,7 @@
 			headers: headers
 		});
 		const json = await response.json();
-		datas = console.log(json.data);
+		datas = [...datas,json.data.attributes];
 	});
 
 
@@ -306,6 +306,12 @@
 <BullshitGrid />
 {:else}
 <WrapperGrid customAreas={selectedLayout} >
+{#each datas as d}
+
+{d.email}
+{d.first_name}
+{/each}
+
 	{#each selectedUser as user}
 		<article class="{selectedTheme.hero1}">
 			<UserHero1 avatarUrl={user.avatarUrl} />
