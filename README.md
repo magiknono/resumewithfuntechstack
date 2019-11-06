@@ -2,6 +2,8 @@
 # goal
 
 - trying svelte v3
+- css grid & css var in js
+- css keyframe
 - adding backend in rails to remove fake data
 
 ![image](https://raw.github.com/magiknono/resumewithfuntechstack/master/arnosideresume.gif)
@@ -18,3 +20,4 @@ rails s
 
 # lessons learned
 - prepare 2 folders before doing this type of project
+
