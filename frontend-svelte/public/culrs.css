@@ -1,0 +1,82 @@
+.culrs-logo {
+    border:5px solid #1A9996 !important;
+}
+
+.culrs-title {
+   border:5px solid #1A9996 !important;
+}
+
+.culrs-btn {
+    
+    color:#1A9996;
+
+}
+article {
+    border: none !important;
+   
+}
+.jobs-culrs > section {
+    border:5px solid #1A9996 !important;
+}
+.skills-culrs > section {
+    border:5px solid #1A9996 !important;
+}
+.ouf {
+    background-color:#7FC6B8;
+   
+}
+.jobs-extra {
+    
+}
+.footer-culrs {
+
+}
+
+img {
+    border-color:white !important;
+}
+
+h2, h3, h4,h5 {
+    font-family: 'Roboto Mono', monospace;
+    color:white;
+}
+h2 {
+    font-size:1.8em;
+}
+h3 {
+    font-size:1.6em;
+    font-weight:bold;
+    letter-spacing: 0.1em;
+    line-height:0.1em;
+    z-index:2;
+    margin-left:0.5em;
+    
+}
+h4 {
+    font-size:1.4em;
+    margin-bottom:0.2em;
+    line-height:1.2em;
+}
+h5 {
+    font-size:1.2em;
+    margin-bottom:0.2em;
+    
+}
+h5 span {
+    background-color:#1A9996;
+    padding:0.1em;
+}
+p {
+    color:#eee;
+    font-size:1em;
+    text-transform:capitalize;
+    font-family: 'verdana';
+}
+
+ h1 {
+    font-family: 'Roboto Mono', monospace;
+    text-transform:uppercase;
+    color:white;
+    font-weight:bold;
+    font-size:2em;
+}
